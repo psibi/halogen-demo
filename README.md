@@ -9,5 +9,11 @@ $ pulp --psc-package build
 # Build developer version
 
 ``` shellsession
-$ pulp --psc-package browserify --to dist/fileName.js
+$ pulp --psc-package browserify --to dist/example.js
+```
+
+# View in Browser
+
+``` shellsession
+$ xdg-open dist/index.html
 ```
