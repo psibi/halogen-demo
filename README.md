@@ -6,6 +6,12 @@ $ pulp --psc-package build
 * Build successful.
 ```
 
+# Watch and build
+
+``` shellsession
+pulp --watch --before 'clear' --psc-package build
+```
+
 # Build developer version
 
 ``` shellsession

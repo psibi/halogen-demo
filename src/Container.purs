@@ -5,7 +5,9 @@ import Data.Maybe (Maybe(..), maybe)
 import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.Events as HE
+import Data.Void
 import Button as Button
+import Footer as Footer
 
 data Query a
   = HandleButton Button.Message a
@@ -16,7 +18,7 @@ type State =
   , buttonState :: Maybe Boolean
   }
 
-data Slot = ButtonSlot
+data Slot = ButtonSlot | ButtonSlot2
 derive instance eqButtonSlot :: Eq Slot
 derive instance ordButtonSlot :: Ord Slot
 
@@ -50,6 +52,7 @@ component =
               [ HE.onClick (HE.input_ CheckButtonState) ]
               [ HH.text "Check now" ]
           ]
+      , HH.slot ButtonSlot2 Button.myButton unit (HE.input HandleButton)
       ]
 
   eval :: Query ~> H.ParentDSL State Query Button.Query Slot Void m
